@@ -14,5 +14,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.querySelector('.process-button').addEventListener('click', function() {
-    window.location.href = '#'; // Replace '#' with the URL or action you want the button to perform
+    window.location.href = '#'; 
 });

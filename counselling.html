@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Counselling</title>
+    <link rel="stylesheet" href="css\counselling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body>
+
+
+    <header>
+        <div class="logo"> 
+            <img src="images/1.png" alt="Inner Calm Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"> </i>Home</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li class="dropdown">
+                    <a href="index.html"  class="active"><i class="fas fa-hands-helping"></i> Services</a>
+                    <div class="dropdown-content">
+                        <a href="counselling.html" class="active">Online Counselling</a>
+                        <a href="anonymous.html">Anonymous Chat</a>
+                        <a href="quiz.html">Mental Health Quizzes and Assessments</a>
+                        <a href="packages.html">Custom Packages</a>
+                    </div>
+                </li>
+                <li><a href="#"><i class="fas fa-heart"></i> Our Teams</a></li>
+                <li><a href="contact.html"><i class="fas fa-users"></i> Contacts</a></li>
+            </ul>
+        </nav>
+
+        <div class="profile-section">
+            <div class="profile-link">
+                <a href="profile.html">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="settings.html">My Profile</a>
+                    <a href="update.html">Update</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    
+
+        <div class="container1">
+            <img src="images\counselling.png" alt="counselling" class="image">
+            <div class="centered1">Online Counselling</div>
+        </div>
+
+
+
+        
+    <!-- Booking Section for Counseling/Therapy -->
+<div class="booking-section">
+    <h2 class="booking-title">Book Your Counselling Appointment</h2>
+    <form class="booking-form">
+        <!-- User's Name -->
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+
+        <!-- User's Email -->
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+
+        <!-- Appointment Date -->
+        <div class="form-group">
+            <label for="appointment-date">Select Appointment Date:</label>
+            <input type="date" id="appointment-date" name="appointment-date" required>
+        </div>
+
+        <!-- Appointment Time -->
+        <div class="form-group">
+            <label for="appointment-time">Select Appointment Time:</label>
+            <input type="time" id="appointment-time" name="appointment-time" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Book Appointment</button>
+    </form>
+</div>
+
+ <!-- Benefits Section -->
+ <section class="benefits-section">
+    <h2>Why Choose Online Counseling?</h2>
+    <ul>
+        <li>Convenient access to professional support from your own home.</li>
+        <li>Flexible scheduling to fit your busy lifestyle.</li>
+        <li>Secure and confidential sessions through encrypted platforms.</li>
+        <li>Affordable rates with no travel expenses.</li>
+    </ul>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+        <p>"The online sessions were a game changer for me. I felt comfortable and supported in every session!"</p>
+        <cite>– Jane D.</cite>
+    </div>
+    <div class="testimonial">
+        <p>"Scheduling was easy, and the sessions fit perfectly into my day. Highly recommend this service!"</p>
+        <cite>– John S.</cite>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section footer-logo">
+            <img src="images\1.png" alt="Logo">
+            <p>Find support for anxiety, depression, and stress help is just a click away!</p>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Mental Counseling</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Anonymous Chat</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Mental Health Quizzes and Assessments</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p><i class="fa fa-phone"></i> +9779808899884</p>
+            <p><i class="fa fa-envelope"></i> soulsupport@gmail.com</p>
+            <p><i class="fa fa-map-marker"></i> Kathmandu</p>
+        </div>
+        <div class="footer-section">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Term Of Use</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>Copyright 2024 ©Soul Support All Right Reserved</p>
+    </div>
+</footer>    
+
+    <script src="js\counselling.js"></script>
+</body>
+</html>

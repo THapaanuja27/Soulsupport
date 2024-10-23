@@ -184,6 +184,7 @@ nav ul li a:hover::after {
 }
 
 
+
 /* Hamburger Menu */
 .hamburger {
     display: none;
@@ -235,345 +236,197 @@ nav ul li a:hover::after {
     .hamburger {
         display: block;
     }
+
 }
 
-/* Main section */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 80px;
-}
 
-/* Hero Section */
-.hero {
-    background-color: #e0e0e0;
-    width: 100%;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+.container1 {
     position: relative;
-    overflow: hidden;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width of the container */
+    height: 50vh; /* Default height */
+    overflow: hidden; /* Hide overflow */
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.hero-image {
-    width: 100%;
-    height: auto; /* Make height auto for responsive scaling */
-    min-height: 70vh; /* Set a minimum height for larger screens */
-    object-fit: cover;
-    border-radius: 0;
-    transform-origin: center center;
-    animation: fadeScaleAnimation 6s ease-in-out infinite alternate;
-}
-
-.hero {
-    position: relative; /* Ensure positioning context for ::before and quote-box */
-    overflow: hidden; /* Hide overflow for the hero */
-}
-
-.hero::before {
+.container1::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Ensure the overlay is above the image but below the text */
 }
 
-.quote-box {
+.image {
+    width: 100%; /* Cover the full width of the container */
+    height: 100%; /* Ensure the height fills the container */
+    object-fit: cover; /* Cover the container without distortion */
+    
+    z-index: 0; /* Keep image behind the overlay */
+}
+
+.centered1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    padding: 20px; /* Adjust padding for mobile */
-    border-radius: 12px;
-    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
-    max-width: 90%; /* Limit width on small screens */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    color: white; /* Text color */
+    font-size: 5em; /* Adjust font size as needed */
+    text-align: center; /* Center text */
+    z-index: 2; /* Ensure the text is above the overlay */
 }
 
-.quote {
-    font-size: 2rem; /* Adjust font size for mobile */
-    margin: 0;
-    font-family: 'Georgia', serif;
-    font-weight: bold;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-}
 
-/* Media Queries for Mobile Responsiveness */
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
-    .quote {
-        font-size: 1.5rem; /* Further reduce font size for smaller screens */
+    .container1 {
+        height: 40vh; /* Reduce height on smaller screens for better visibility */
     }
 
-    .quote-box {
-        padding: 15px; /* Reduce padding on mobile */
+    .image {
+        object-fit: cover; /* Ensure the image covers the container */
+        object-position: 50% 20%; /* Adjust to focus lower on smaller screens */
+    }
+
+    .centered1 {
+        font-size: 2em; /* Reduce font size for smaller screens */
+        /* Optionally, you can also adjust margins for better positioning */
     }
 }
 
-/* Button Container */
-.button-container {
-    display: flex;
-    justify-content: center; /* Center the buttons */
-    gap: 15px; /* Space between buttons */
-    margin-top: 20px; /* Space above buttons */
-}
-
-.btn {
-    background-color: #d4a017; /* Button background color */
-    color: #fff; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background transition */
-}
-
-.btn:hover {
-    background-color: #d4a017; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight scale effect on hover */
-}
 
 
 
-/* Section styling */
-.mission-section {
-    text-align: center;
-    padding: 20px;
-    max-width: 700px;
-    margin: 0 auto; /* Center the section horizontally */
-    color: #0b5345; /* Text color similar to dark green */
-}
-
-/* Mission title */
-.mission-title {
-    font-size: 50px; /* Increased font size for title */
-    font-weight: 500;
-    color: #d4a017; /* Soft gold color for the title */
-    margin-bottom: 20px;
-}
-
-/* Mission content */
-.mission-content {
-    font-size: 48px; /* Increased font size for content */
-    font-weight: 400;
-    line-height: 1.3;
-    color: #194d47; /* Darker green for the text */
-}
-
-/* Highlighted text */
-.highlight {
-    font-style: italic;
-    position: relative;
-}
-
-/* Adding the underline swoosh effect */
-.highlight::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 0.6em;
-    background: rgba(212, 160, 23, 0.2); /* Soft gold translucent background */
-    z-index: -1;
-    border-radius: 50%;
-}
-
-
-
-/* Section Container */
-.section-container {
-    width: 100%;
-    margin: 40px auto;
-    text-align: center;
+/* Contact form styles */
+#contact-form {
+    background: white;
     padding: 30px;
-    background-color: #ffffff; /* Default background */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Initial shadow */
-    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease; /* Smooth transitions */
-}
-
-
-
-/* Section Heading */
-.section-container h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    transition: color 0.4s ease; /* Smooth color transition for the heading */
-}
-
-.section-container:hover h2 {
-    color: #007BFF; /* Heading color change on hover */
-}
-
-
-/* Issues Cards */
-.issues-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.issue-card {
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    padding: 15px;
-    width: calc(30% - 10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 5px;
 }
 
-.issue-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+#contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
 }
 
-.issue-card img {
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
     width: 100%;
-    border-radius: 8px;
-    max-height: 250px;
-    object-fit: cover;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.issue-card p {
-    margin: 10px 0 0;
-    font-weight: bold;
-    transition: color 0.3s ease;
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #d4a017;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
-.issue-card:hover p {
-    color: #d4a017;
+button {
+    background-color: #d4a017;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
-
-
-
-
-.recent-articles {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
-    font-family: Arial, sans-serif;
-    transition: all 0.3s ease-in-out;
+button:hover {
+    background-color: #d4a017;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.recent-articles h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+/* Geolocation styles */
+#geolocation {
+    margin: 20px auto;
     text-align: center;
 }
 
-.articles-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.articles-column {
-    width: 48%;
+#map {
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
     transition: transform 0.3s ease;
 }
 
-.article-item {
-    display: flex;
-    margin-bottom: 20px;
-    align-items: flex-start;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+#map:hover {
+    transform: scale(1.02);
 }
 
-.article-item:hover {
+iframe {
+    border: none;
+    width: 100%;
+    height: 450px;
+}
+
+/* Newsletter styles */
+#newsletter {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#newsletter:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
 }
 
-.article-item img {
-    width: 100px;
-    height: 100px;
-    margin-right: 15px;
-    object-fit: cover;
+#newsletter input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    transition: transform 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.article-item img:hover {
-    transform: scale(1.05);
+#newsletter input[type="email"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
-.article-content h3 {
-    font-size: 1.2em;
-    margin: 0 0 10px;
-    transition: color 0.3s ease;
+#newsletter button {
+    margin-top: 10px;
 }
 
-.article-content h3 a {
-    text-decoration: none;
-    color: #333;
-}
-
-.article-content h3 a:hover {
-    color: #007bff;
-}
-
-.article-content p {
-    font-size: 0.9em;
-    color: #666;
-}
-
-.article-content a {
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.article-content a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
+/* Responsive styles */
 @media (max-width: 768px) {
-    .articles-column {
-        width: 100%;
-        margin-bottom: 20px;
+    #contact-form, #newsletter {
+        width: 90%;
     }
 
-    .article-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    #map {
+        height: 300px;
     }
 
-    .article-item img {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-    }
-
-    .article-content h3 {
-        font-size: 1em;
+    iframe {
+        height: 300px;
     }
 }
+
+
+
 
 
 
